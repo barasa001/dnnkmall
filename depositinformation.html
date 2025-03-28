@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .title-card {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .back-icon {
+            position: absolute;
+            left: 20px;
+            cursor: pointer;
+        }
+        .back-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        .title-card h1 {
+            font-size: 20px;
+            font-weight: normal;
+            color: #333;
+        }
+        .info-card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(100% - 40px);
+            margin: 10px 0;
+        }
+        .info-card:first-of-type {
+            margin-top: 0;
+        }
+        .info-card:nth-of-type(2) {
+            margin: 10px 0;
+            border-radius: 0;
+        }
+        .info-card:last-of-type {
+            margin: 10px 30px; /* Increased left and right margins */
+        }
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .order-nos {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .order-nos span,
+        .copy-button {
+            color: #ffa500;
+        }
+        .instruction {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .payment-info {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .qr-code {
+            max-width: 200px;
+            margin: 0 auto 20px;
+        }
+        .address {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .copy-button {
+            background-color: #fff;
+            border: 2px solid #ffa500;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-bottom: 20px;
+        }
+        .action-buttons {
+            display: flex;
+            justify-content: center; /* Center the action texts */
+            width: calc(100% - 40px);
+            margin: 10px 20px; /* Adjusted margin */
+        }
+        .action-buttons span {
+            color: #f0e68c;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 0 70px; /* Added spacing between texts */
+        }
+        #cancel-deposit { /* Style for the cancel text */
+            white-space: pre-wrap;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="title-card">
+        <div class="back-icon" onclick="window.location.href='your-previous-page.html'">
+            <img src="arrowicon.png" alt="Back Icon">
+        </div>
+        <h1>deposit information</h1>
+    </div>
+    <div class="info-card">
+        <div class="amount">700.00USDT</div>
+        <div class="amount">700.00USDT</div>
+        <div class="order-nos">Order Nos : 1088868336634175488 (<span>4319 : 26</span>)</div>
+        <div class="instruction">After successful payment, you need to click the paid button, and <span style="color:#f0e68c">Contact Customer Service</span> Confirm</div>
+    </div>
+    <div class="info-card">
+        <div class="payment-info">Please use any wallet APP to scan or copy the payment address to pay (TRC20)</div>
+        <img src="qrcode1.jpg" alt="QR Code" class="qr-code">
+        <div class="address">TDrgE64Lo5Cut8cCvDxZZxfmhHJpJBQb9o</div>
+        <button class="copy-button" onclick="copyAddress()">Copy</button>
+    </div>
+    <div class="action-buttons">
+        <span id="cancel-deposit" onclick="cancelDeposit()">Cancel deposit
+application</span>
+        <span onclick="transferred()">transferred</span>
+    </div>
+    <script>
+        function copyAddress() {
+            const address = document.querySelector('.address').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            });
+        }
+        function cancelDeposit() {
+            alert('Cancel deposit application clicked');
+        }
+        function transferred() {
+            alert('Transferred clicked');
+        }
+    </script>
+</body>
+</html>

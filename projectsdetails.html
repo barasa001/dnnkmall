@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AliExpress Task Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(to right, #4a90e2, #2a5db0); /* Blue gradient */
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 150px; /* Increased height to accommodate balance */
+        }
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(to right, #4a90e2, #2a5db0); /* Matches header gradient */
+            padding: 15px 20px;
+            z-index: 1000; /* Stays above other elements */
+        }
+        .back-icon {
+            position: absolute;
+            left: 20px;
+        }
+        .back-icon img {
+            width: 24px; /* Adjust size as needed */
+            height: 24px;
+            filter: brightness(9527);
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .balance {
+            position: absolute;
+            top: 60px; /* Positioned below the icon */
+            left: 20px;
+            color: white;
+            z-index: 1001; /* Ensure it’s above other elements */
+        }
+        .balance p {
+            margin: 0;
+            font-size: 16px;
+        }
+        .balance h2 {
+            margin: 5px 0 0;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .card {
+            background-color: white;
+            margin: 0 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+            top: -30px; /* Overlaps the header */
+            width: 90%; /* Slightly wider than height */
+            max-width: 350px; /* Limits width for a near-square shape */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .stat-box {
+            flex: 1;
+            min-width: 120px; /* Adjusted for smaller card */
+            text-align: center;
+        }
+        .stat-box h3 {
+            margin: 0;
+            font-size: 20px; /* Reduced font size for smaller card */
+            color: #333;
+        }
+        .stat-box p {
+            margin: 5px 0 0;
+            font-size: 12px; /* Reduced font size for smaller card */
+            color: #888;
+        }
+        .grab-button {
+            background-color: #2a5db0;
+            color: white;
+            padding: 12px; /* Slightly smaller padding */
+            border: none;
+            border-radius: 25px;
+            font-size: 14px; /* Reduced font size */
+            font-weight: bold;
+            cursor: pointer;
+            width: 80%;
+            margin: 0 auto;
+            display: block;
+        }
+        .hint {
+            margin: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .hint p {
+            margin: 5px 0;
+        }
+        /* Pop-up card styles */
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8); /* Dark and slightly transparent */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 2000; /* Above other elements */
+            width: 80%;
+            max-width: 300px;
+            height: 150px; /* Good height for three lines */
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .popup p {
+            color: white;
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.5; /* Spacing for three lines */
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="back-icon">
+            <img src="arrowicon.png" alt="Back Icon">
+        </div>
+        <h1>AliExpress</h1>
+    </div>
+    <div class="header">
+        <div class="balance">
+            <p>Account Balance:</p>
+            <h2>1265.97 USDT</h2>
+        </div>
+    </div>
+    <div class="card">
+        <div class="stats">
+            <div class="stat-row">
+                <div class="stat-box">
+                    <h3>18</h3>
+                    <p>Today's Times</p>
+                </div>
+                <div class="stat-box">
+                    <h3>858.95 USDT</h3>
+                    <p>Today's commission</p>
+                </div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-box">
+                    <h3>890.64 USDT</h3>
+                    <p>Cash gap between tasks</p>
+                </div>
+                <div class="stat-box">
+                    <h3>0 USDT</h3>
+                    <p>Yesterday's buy commission</p>
+                </div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-box">
+                    <h3>0 USDT</h3>
+                    <p>Yesterday's team commission</p>
+                </div>
+                <div class="stat-box">
+                    <h3>0 USDT</h3>
+                    <p>Money frozen in accounts</p>
+                </div>
+            </div>
+        </div>
+        <button class="grab-button" onclick="showPopup()">Grab the order immediately</button>
+    </div>
+    <div class="hint">
+        <p><strong>Hint:</strong></p>
+        <p>1: 5% of the amount of completed transactions earned.</p>
+        <p>2: The system sends tasks randomly. Complete them as soon as possible after matching them, so as to avoid hanging all the time.</p>
+    </div>
+    <!-- Pop-up card -->
+    <div class="popup" id="popup">
+        <p>You have an unpaid order,<br>please complete<br>the payment first</p>
+    </div>
+
+    <script>
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'flex'; // Show the pop-up
+        }
+
+        // Optional: Hide the pop-up when clicking anywhere on the screen
+        document.addEventListener('click', function(event) {
+            const popup = document.getElementById('popup');
+            const grabButton = document.querySelector('.grab-button');
+            if (event.target !== grabButton && !popup.contains(event.target)) {
+                popup.style.display = 'none'; // Hide the pop-up
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .title-card {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .back-icon {
+            position: absolute;
+            left: 20px;
+            cursor: pointer;
+        }
+        .back-icon img {
+            width: 30px;
+            height: 30px;
+        }
+        .title-card h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: normal;
+            color: #333;
+        }
+        .content-card {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: calc(100% - 20px);
+            margin: 0 10px;
+        }
+        .deposit-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+        }
+        .deposit-icon img { /* Added CSS for the image */
+            width: 50px; /* Reduced width */
+            height: 45px; /* Reduced height */
+        }
+        .deposit-message {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #333;
+        }
+        .address-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        .address {
+            background-color: #f5f5f5;
+            padding: 11px;
+            border-radius: 5px;
+            font-size: 11px;
+            color: #666;
+            white-space: nowrap;
+            max-width: 250px;
+            flex: 0 0 auto;
+            text-align: center;
+            height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+        }
+        .copy-button,
+        .contact-button {
+            background-color: #fff;
+            border: 2px solid #2a5db0;
+            color: #2a5db0;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            padding: 0 2vw;
+            height: 40px;
+            margin: 5px;
+            box-sizing: border-box;
+            flex-grow: 1;
+            min-width: 120px;
+            max-width: calc(100% - 300px);
+        }
+        .copy-button {
+            flex-grow: 0.5;
+            width: auto;
+        }
+        .contact-button {
+            max-width: 250px;
+            margin: 10px auto 25px;
+        }
+        .hint {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+            text-align: left;
+        }
+        /* Mobile Specific Adjustments */
+        @media (max-width: 600px) {
+            .address-container {
+                justify-content: center;
+            }
+            .copy-button {
+                margin-left: 5px;
+            }
+        }
+        @media(max-width: 400px){
+            .copy-button {
+                margin-left: 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-card">
+        <div class="back-icon" onclick="window.location.href='aliexpress.html'">
+            <img src="arrowicon.png" alt="Back Icon">
+        </div>
+        <h1>Deposit</h1>
+    </div>
+    <div class="content-card">
+        <div class="deposit-icon">
+            <img src="downbtn.png" alt="Down Button">
+        </div>
+        <div class="deposit-message">You have an order that has not been paid</div>
+        <div class="address-container">
+            <div class="address">TDRgE64Lo5Cut8cCvDXZxmfmhHJpJBQB90</div>
+            <button class="copy-button" onclick="copyAddress()">Copy</button>
+        </div>
+        <button class="contact-button">Contact Customer Service</button>
+        <div class="hint">
+            Click to copy the address to transfer USDT. If it does not arrive automatically, click to contact customer service for processing.
+        </div>
+    </div>
+
+    <script>
+        function copyAddress() {
+            const address = document.querySelector('.address').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            });
+        }
+    </script>
+</body>
+</html>

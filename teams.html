@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teams</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0; /* Remove body padding */
+            background: linear-gradient(to bottom, #4a90e2, #9b51e0);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .floating-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* Make the header float */
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            z-index: 100; /* Ensure it's on top */
+        }
+
+        .back-icon {
+            cursor: pointer;
+        }
+
+        .back-icon img {
+            width: 11px;
+            height: 17px;
+            filter: brightness(0) invert(1);
+        }
+
+        .floating-header h1 {
+            font-size: 15px;
+            margin: 0;
+        }
+
+        .team-amount-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 20px; /* Add padding to team amount */
+        }
+
+        .team-amount-container span:first-child {
+            font-size: 14px;
+        }
+
+        .team-amount-container span:last-child {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            text-align: center;
+            margin-top: 0;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px; /* Add padding to info grid */
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid white;
+            padding: 0 5px;
+        }
+
+        .info-item:last-child {
+            border-right: none;
+        }
+
+        .info-item span:first-child {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .info-item span:last-child {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 0;
+            background-color: #fff;
+            color: #333;
+            border-radius: 0;
+            padding: 10px 0 0;
+            width: 100%;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab.selected {
+            border-bottom: 2px solid #333;
+        }
+
+        .no-data {
+            text-align: center;
+            margin-top: 0;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            border-radius: 0;
+            width: 100%;
+        }
+
+        .content-container {
+            margin-top: 60px; /* Add margin to prevent content from overlapping the floating header */
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-header">
+        <h1>Teams</h1>
+        <div class="back-icon" onclick="window.location.href='your-previous-page.html'">
+            <img src="arrowicon.png" alt="Back Icon">
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="team-amount-container">
+            <span>Team Amount</span>
+            <span>1265.97</span>
+        </div>
+        <div class="info-grid">
+            <div class="info-item">
+                <span>0</span>
+                <span>Agent Profit</span>
+            </div>
+            <div class="info-item">
+                <span>587</span>
+                <span>Total recharge</span>
+            </div>
+            <div class="info-item">
+                <span>333.45</span>
+                <span>Total withdraw</span>
+            </div>
+            <div class="info-item">
+                <span>999.97</span>
+                <span>Order commission</span>
+            </div>
+            <div class="info-item">
+                <span>0</span>
+                <span>Newcomers</span>
+            </div>
+            <div class="info-item">
+                <span>0</span>
+                <span>Activities number</span>
+            </div>
+            <div class="info-item">
+                <span>1265.97</span>
+                <span>Team amount</span>
+            </div>
+            <div class="info-item">
+                <span>0</span>
+                <span>Team number</span>
+            </div>
+        </div>
+        <div class="tabs">
+            <div class="tab selected">Level 1</div>
+            <div class="tab">Level 2</div>
+            <div class="tab">Level 3</div>
+        </div>
+        <p class="no-data">No data</p>
+    </div>
+</body>
+</html>

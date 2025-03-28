@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Record</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .header-card {
+            background-color: #fff;
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .back-icon {
+            position: absolute;
+            left: 20px;
+            cursor: pointer;
+        }
+
+        .back-icon img {
+            width: 11px;
+            height: 17px;
+            filter: grayscale(100%);
+        }
+
+        .header-content h1 {
+            font-size: 15px;
+            color: #101010;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            color: #3498db;
+            font-size: 12.928px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 10px 0;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .tab.selected {
+            border-bottom: 2px solid #1958b1;
+        }
+
+        .content-card {
+            background-color: #fff;
+            padding: 10px 20px;
+            margin-top: 10px;
+            font-size: 12.928px;
+        }
+
+        .order-details p {
+            margin-bottom: 10px;
+        }
+
+        .item-card {
+            display: flex;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12.928px;
+        }
+
+        .item-card img {
+            width: 70px;
+            height: auto;
+            margin-right: 10px;
+            align-self: flex-start;
+        }
+
+        .item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            font-size: 12.928px;
+        }
+
+        .item-details p:first-child {
+            margin-bottom: 5px;
+        }
+
+        .item-details p:last-child {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quantity {
+            font-size: 12.928px;
+            color: #666;
+        }
+
+        .transaction-info {
+            padding: 20px;
+            font-size: 12.928px;
+        }
+
+        .transaction-info p {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .submit-button {
+            background-color: #202ef5;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: calc(100% - 30px);
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .arrow-down {
+            font-size: 12px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .popup {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            color: #fff;
+            z-index: 1000;
+        }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+            padding: 10px 0;
+            position: sticky;
+            bottom: 0;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .totals {
+            color: orange;
+            font-size: 20px;
+        }
+
+        .nav-item img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-item p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .nav-item.selected {
+            color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-card">
+            <div class="header-content">
+                <div class="back-icon" onclick="window.location.href='your-previous-page.html'">
+                    <img src="arrowicon.png" alt="Back Icon">
+                </div>
+                <h1>Record</h1>
+            </div>
+            <div class="tabs">
+                <div class="tab">Incomplete</div>
+                <div class="tab selected">Complete</div>
+            </div>
+        </div>
+        <div class="content-card">
+            <p>Order Nos: 1060159094070976512</p>
+            <div class="item-card">
+                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/0c0a6367-4784-4be0-95bc-513bc5e018d8.jpg" alt="">
+                <div class="item-details">
+                    <p>KIMONO PRIA piyama COUPLE/lebih sweet/bahannya adem dan ukuran...</p>
+                    <p>10.92 USDT <span class="quantity">x72</span></p>
+                </div>
+            </div>
+            <div class="transaction-info">
+                <p>Transaction time: <span>2025-01-04 08:33:45</span></p>
+                <p>Order amount: <span>786.24 USDT</span></p>
+                <p>Commissions: <span>94.35 USDT</span></p>
+                <p>Expected income: <span class="totals">880.59 USDT</span></p>
+            </div>
+            <p>Order Nos: 1060159054552244224</p>
+            <div class="item-card">
+                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/d02f6179-c829-4abc-bfc8-e82bf299bca1.jpg" alt="">
+                <div class="item-details">
+                    <p>piyama katun tangan pendek - Putih, M</p>
+                    <p>17.87 USDT <span class="quantity">x41</span></p>
+                </div>
+            </div>
+            <div class="transaction-info">
+                <p>Transaction time: <span>2025-01-04 08:33:35</span></p>
+                <p>Order amount: <span>732.67 USDT</span></p>
+                <p>Commissions: <span>87.92 USDT</span></p>
+                <p>Expected income: <span class="totals">820.59 USDT</span></p>
+            </div>
+        </div>
+        <div class="popup" id="popup">
+            <p>Your account balance is insufficient, you need recharge 190.64 to submit this order.</p>
+        </div>
+        <div class="bottom-nav">
+            <div class="nav-item">
+                <img src="homeicon.png" alt="Home">
+                <p>Home</p>
+            </div>
+            <div class="nav-item">
+                <img src="serveicon.png" alt="Service">
+                <p>Service</p>
+            </div>
+            <div class="nav-item">
+                <img src="menuicon.png" alt="Menu">
+                <p>Menu</p>
+            </div>
+            <div class="nav-item selected">
+                <img src="recordicon.png" alt="Record">
+                <p>Record</p>
+            </div>
+            <div class="nav-item">
+                <img src="mineicon.png" alt="Mine">
+                <p>Mine</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('popup').style.display = 'none';
+            }, 3000); // Hide after 3 seconds
+        }
+    </script>
+</body>
+</html>

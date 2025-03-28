@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding-bottom: 60px; /* Added padding to make space for navbar */
+        }
+
+        .header {
+            background: linear-gradient(to left, #4169e1 1%, #9cb5ff 100%);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 105px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+        }
+
+        .avatar-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .header-left img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+
+        .user-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .username {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .username img {
+            height: 18px;
+            width: 40px;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        .invitation {
+            font-size: 14px;
+        }
+
+        .header-right img {
+            width: 30px;
+            height: 30px;
+            margin-top: -100px;
+        }
+
+        .account-details {
+            padding: 20px;
+            background: linear-gradient(to left, #4169e1 1%, #9cb5ff 100%);
+            color: white;
+            height: 105px;
+        }
+
+        .account-details-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .account-details-left {
+            text-align: left;
+        }
+
+        .account-title {
+            font-size: 16px;
+            color: #eee;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .usdt {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .usdt span {
+            font-size: 15px;
+            font-weight: normal;
+        }
+
+        .account-details-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .deposit-withdraw {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        .deposit-withdraw img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 8px;
+        }
+
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .quick-links img {
+            width: 30px;
+            height: 30px;
+            margin-bottom: 5px;
+        }
+
+        .link-text {
+            font-size: 13px;
+        }
+
+        .list-card {
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-items {
+            padding: 20px;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-item img {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+        }
+
+        .list-text {
+            flex-grow: 1;
+        }
+
+        .list-arrow::after {
+            content: '>';
+            height: 10px;
+            color: #888;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            position: fixed; /* Make it fixed */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            max-width: 600px; /* Add max width again */
+            margin: 0 auto; /* Add margin auto again */
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            font-size: 14px;
+            color: #888;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .nav-item img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .nav-item.active {
+            color: #4a90e2;
+            font-weight: bold;
+        }
+
+        .nav-item.mine-active img {
+            filter: brightness(0) saturate(100%) invert(28%) sepia(93%) saturate(2222%) hue-rotate(202deg) brightness(92%) contrast(100%);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-left">
+                <div class="avatar-container">
+                    <img data-v-b951f88c="" src="https://fastly.jsdelivr.net/npm/@vant/assets/logo.png" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <div class="username">Sestar001 <img src="vip3icon.png" alt="vip3 Icon"></div>
+                    <div class="invitation">Invitation code: 367773</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <img src="serviceicon.png" alt="Service Icon">
+            </div>
+        </div>
+
+        <div class="account-details">
+            <div class="account-details-content">
+                <div class="account-details-left">
+                    <div class="account-title">My Account</div>
+                    <div class="usdt"><span>USDT</span> 1965.97</div>
+                </div>
+                <div class="account-details-right">
+                    <div class="deposit-withdraw">
+                        <img src="walleticon.png" alt="Deposit Icon">
+                        Deposit
+                    </div>
+                    <div class="deposit-withdraw">
+                        <img src="walleticon.png" alt="Deposit Icon">
+                        Withdrawal
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <div class="link">
+                <img src="teamsicon.png" alt="Teams Icon">
+                <div class="link-text">Teams</div>
+            </div>
+            <div class="link">
+                <img src="recordsicon.png" alt="Records Icon">
+                <div class="link-text">Record</div>
+            </div>
+            <div class="link">
+                <img src="walletmanagementicon.png" alt="Wallet Icon">
+                <div class="link-text">Wallet <br> management</div>
+            </div>
+            <div class="link">
+                <img src="invitefriendsicon.png" alt="Invite Icon">
+                <div class="link-text">Invite friends</div>
+            </div>
+        </div>
+
+        <div class="list-card">
+            <div class="list-items">
+                <div class="list-item">
+                    <img class="list-icon" src="profileicon.png" alt="Profile Icon">
+                    <div class="list-text">Profile</div>
+                    <div class="list-arrow"></div>
+                </div>
+                <div class="list-item">
+                    <img class="list-icon" src="depositicons.png" alt="Deposit Records Icon">
+                    <div class="list-text">Deposit records</div>
+                    <div class="list-arrow"></div>
+                </div>
+                <div class="list-item">
+                    <img class="list-icon" src="withdrawicon.png" alt="Withdrawal Records Icon">
+                    <div class="list-text">Withdrawal records</div>
+                    <div class="list-arrow"></div>
+                </div>
+                <div class="list-item">
+                    <img class="list-icon" src="settingicon.png" alt="Setting Icon">
+                    <div class="list-text">Setting</div>
+                    <div class="list-arrow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <div class="nav-item">
+            <img src="homeicon.png" alt="Home Icon">
+            Home
+        </div>
+        <div class="nav-item">
+            <img src="serveicon.png" alt="Service Icon">
+            Service
+        </div>
+        <div class="nav-item">
+            <img src="menuicon.png" alt="Menu Icon">
+            Menu
+        </div>
+        <div class="nav-item">
+            <img src="recordicon.png" alt="Record Icon">
+            Record
+        </div>
+        <div class="nav-item mine-active">
+            <img src="coloredicon.png" alt="Mine Icon">
+            Mine
+        </div>
+    </div>
+</body>
+</html>
