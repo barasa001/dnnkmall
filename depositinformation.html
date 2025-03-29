@@ -15,14 +15,15 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+            font-size: 12px; /* Reduced by another 1px */
         }
         .title-card {
             background-color: #fff;
-            padding: 15px 20px;
+            padding: 13px 18px;
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -30,90 +31,107 @@
         }
         .back-icon {
             position: absolute;
-            left: 20px;
+            left: 38px; /* Adjusted */
             cursor: pointer;
         }
         .back-icon img {
-            width: 30px;
-            height: 30px;
+            width: 9px;
+            height: 15px;
+            filter: grayscale(100%);
         }
         .title-card h1 {
-            font-size: 20px;
+            font-size: 14px; /* Reduced by another 1px */
+            color: #101010;
+            margin: 0 auto;
             font-weight: normal;
-            color: #333;
+            padding-left: 18px;
         }
         .info-card {
             background-color: #fff;
-            padding: 20px;
+            padding: 18px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
             width: calc(100% - 40px);
-            margin: 10px 0;
+            margin: 8px 0;
         }
         .info-card:first-of-type {
             margin-top: 0;
         }
         .info-card:nth-of-type(2) {
-            margin: 10px 0;
+            margin: 8px 0;
             border-radius: 0;
         }
         .info-card:last-of-type {
-            margin: 10px 30px; /* Increased left and right margins */
+            margin: 8px 27px; /* Adjusted */
         }
         .amount {
-            font-size: 24px;
+            font-size: 22px; /* Reduced by another 1px */
+            margin-bottom: 3px;
+            font-weight: normal; /* Removed bold */
+        }
+        .amount:last-of-type {
+            font-size: 27px; /* Increased size */
             font-weight: bold;
-            margin-bottom: 5px;
         }
         .order-nos {
-            font-size: 14px;
+            font-size: 12px; /* Reduced */
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
         .order-nos span,
         .copy-button {
             color: #ffa500;
         }
         .instruction {
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 12px; /* Reduced */
+            margin-bottom: 18px;
+        }
+        .instruction span {
+            color: #f0e68c;
+        }
+        .instruction br {
+            display: block;
         }
         .payment-info {
-            font-size: 14px;
-            margin-bottom: 20px;
+            font-size: 12px; /* Reduced */
+            margin-bottom: 18px;
+            text-align: left; /* Left-aligned */
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
         }
         .qr-code {
-            max-width: 200px;
-            margin: 0 auto 20px;
+            max-width: 180px;
+            margin: 0 auto 18px;
         }
         .address {
-            font-size: 12px;
+            font-size: 10px; /* Reduced */
             color: #666;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .copy-button {
             background-color: #fff;
-            border: 2px solid #ffa500;
-            border-radius: 5px;
+            border: 1px solid #ffa500; /* Matched text color */
+            border-radius: 4px;
             cursor: pointer;
-            font-size: 16px;
-            padding: 10px 20px;
-            margin-bottom: 20px;
+            font-size: 13px; /* Reduced */
+            padding: 7px 14px; /* Smaller */
+            margin-bottom: 18px;
         }
         .action-buttons {
             display: flex;
-            justify-content: center; /* Center the action texts */
+            justify-content: center;
             width: calc(100% - 40px);
-            margin: 10px 20px; /* Adjusted margin */
+            margin: 8px 18px;
         }
         .action-buttons span {
             color: #f0e68c;
-            font-size: 14px;
+            font-size: 12px; /* Reduced */
             cursor: pointer;
-            margin: 0 70px; /* Added spacing between texts */
+            margin: 0 64px; /* Adjusted */
         }
-        #cancel-deposit { /* Style for the cancel text */
+        #cancel-deposit {
             white-space: pre-wrap;
             text-align: center;
         }
@@ -130,10 +148,16 @@
         <div class="amount">700.00USDT</div>
         <div class="amount">700.00USDT</div>
         <div class="order-nos">Order Nos : 1088868336634175488 (<span>4319 : 26</span>)</div>
-        <div class="instruction">After successful payment, you need to click the paid button, and <span style="color:#f0e68c">Contact Customer Service</span> Confirm</div>
+        <div class="instruction">
+            After successful payment, you need to click the paid<br> 
+            button, and <span>Contact Customer Service</span> Confirm
+        </div>
     </div>
     <div class="info-card">
-        <div class="payment-info">Please use any wallet APP to scan or copy the payment address to pay (TRC20)</div>
+        <div class="payment-info">
+            Please use any wallet APP to scan or copy the payment address<br> 
+            to pay (TRC20)
+        </div>
         <img src="qrcode1.jpg" alt="QR Code" class="qr-code">
         <div class="address">TDrgE64Lo5Cut8cCvDxZZxfmhHJpJBQb9o</div>
         <button class="copy-button" onclick="copyAddress()">Copy</button>
