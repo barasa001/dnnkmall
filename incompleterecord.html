@@ -91,23 +91,25 @@
 
         .item-card {
             display: flex;
-            background-color: #f0f0f0; /* Light grey background */
-            margin: 10px 0; /* Margins around the card */
+            background-color: #f0f0f0;
+            margin: 10px 0;
             padding: 10px;
             border-radius: 5px;
+            font-size: 12.928px;
         }
 
         .item-card img {
-            width: 80px;
+            width: 70px;
             height: auto;
             margin-right: 10px;
-            align-self: flex-start; /* Image at the top */
+            align-self: flex-start;
         }
 
         .item-details {
             flex: 1;
             display: flex;
             flex-direction: column;
+            font-size: 12.928px;
         }
 
         .item-details p:first-child {
@@ -126,6 +128,7 @@
 
         .transaction-info {
             padding: 20px;
+            font-size: 12.928px;
         }
 
         .transaction-info p {
@@ -187,9 +190,9 @@
 
         }
 
-        .total1 {
+        .totals {
             color: orange;
-            font-size: 25px;
+            font-size: 20px;
         }
 
         .nav-item p {
@@ -250,7 +253,7 @@
                 <p>Transaction time: <span>2025-01-04 08:33:56</span></p>
                 <p>Order amount: <span>2156.61 USDT</span></p>
                 <p>Commissions: <span>1617.46 USDT</span></p>
-                <p>Expected income: <span class="total1">3774.07 USDT</span></p>
+                <p>Expected income: <span class="totals">3774.07 USDT</span></p>
                 <button class="submit-button" onclick="showPopup()">Submit order</button>
                 <div class="arrow-down">↓</div>
             </div>
