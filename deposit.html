@@ -30,7 +30,7 @@
         }
         .back-icon {
             position: absolute;
-            left: 40px; /* Move it further from the left */
+            left: 30px;
             cursor: pointer;
         }
         .back-icon img {
@@ -43,7 +43,6 @@
             color: #101010;
             margin: 0 auto;
             font-weight: normal;
-            padding-left: 20px; /* Creates space to shift "Deposit" */
         }
         .content-card {
             background-color: #fff;
@@ -51,8 +50,8 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
-            width: calc(100% - 20px);
-            margin: 0 10px;
+            width: 90%;
+            margin: 0 auto;
         }
         .deposit-icon {
             width: 50px;
@@ -75,8 +74,26 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 0px;
             margin-bottom: 25px;
             width: 100%;
+        }
+        .copy-button {
+            background-color: #fff;
+            border: 1px solid #3769b9;
+            color: #3769b9;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            padding: 0 10px;
+            height: 40px;
+            width: auto;
+            min-width: 65px;
+            box-sizing: border-box;
         }
         .address {
             background-color: #f5f5f5;
@@ -85,8 +102,7 @@
             font-size: 12px;
             color: #666;
             white-space: nowrap;
-            max-width: 65.75%;
-            flex: 1 0 auto;
+            flex: 1;
             text-align: center;
             height: 40px;
             display: flex;
@@ -94,7 +110,6 @@
             justify-content: center;
             box-sizing: border-box;
         }
-        .copy-button,
         .contact-button {
             background-color: #fff;
             border: 1px solid #3769b9;
@@ -103,52 +118,21 @@
             cursor: pointer;
             font-size: 14px;
             font-weight: normal;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
             white-space: nowrap;
             padding: 0 2vw;
             height: 40px;
-            margin: 5px;
-            box-sizing: border-box;
-        }
-        .copy-button {
-            flex-grow: 0.5;
-            width: auto;
-        }
-        .contact-button {
-            width: 40%;
-            max-width: 40%;
+            width: 48.72%; /* Increased width by 10% */
             margin: 10px auto 25px;
+            box-sizing: border-box;
         }
         .hint {
             font-size: 12px;
             color: #777;
             margin-top: 10px;
             text-align: left;
-        }
-        /* Mobile Specific Adjustments */
-        @media (max-width: 400px) {
-            .copy-button {
-                margin-left: 0px;
-                font-size: 7px;
-                padding: 0 0.5vw;
-                height: 20px;
-                flex-grow: 0;
-                min-width: 50px;
-                max-width: 80px;
-            }
-            .contact-button {
-                font-size: 21px;
-                padding: 0 3vw;
-                height: 60px;
-            }
-            .address {
-                max-width: 95%;
-            }
-            .back-icon {
-                left: 20px; /* Adjust for smaller screens */
-            }
         }
     </style>
 </head>
@@ -173,7 +157,6 @@
             Click to copy the address to transfer USDT. If it does not arrive automatically, click to contact customer service for processing.
         </div>
     </div>
-
     <script>
         function copyAddress() {
             const address = document.querySelector('.address').textContent;
