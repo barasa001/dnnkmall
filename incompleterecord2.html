@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Record</title>
+    <title>Deposit</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,299 +13,159 @@
             color: #333;
             display: flex;
             flex-direction: column;
+            align-items: center;
             min-height: 100vh;
         }
-
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .header-card {
+        .title-card {
             background-color: #fff;
             padding: 15px 20px;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-bottom: 10px;
             display: flex;
             align-items: center;
+            justify-content: center;
             position: relative;
         }
-
         .back-icon {
             position: absolute;
-            left: 20px;
+            left: 30px;
             cursor: pointer;
         }
-
         .back-icon img {
             width: 11px;
             height: 17px;
             filter: grayscale(100%);
         }
-
-        .header-content h1 {
-            font-size: 18px;
+        .title-card h1 {
+            font-size: 16px;
             color: #101010;
             margin: 0 auto;
             font-weight: normal;
         }
-
-        .tabs {
-            display: flex;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-            color: #3498db;
-            font-size: 12.928px;
-        }
-
-        .tab {
-            flex: 1;
-            padding: 10px 0;
-            text-align: center;
-            cursor: pointer;
-            font-weight: bold;
-        }
-
-        .tab.selected {
-            border-bottom: 2px solid #1958b1;
-        }
-
         .content-card {
             background-color: #fff;
-            padding: 10px 20px;
-            margin-top: 10px;
-        }
-
-        .order-details p {
-            margin-bottom: 10px;
-        }
-
-        .item-card {
-            display: flex;
-            background-color: #f0f0f0;
-            margin: 10px 0;
-            padding: 10px;
+            padding: 30px;
             border-radius: 5px;
-            font-size: 12.928px;
-        }
-
-        .item-card img {
-            width: 70px;
-            height: auto;
-            margin-right: 10px;
-            align-self: flex-start;
-        }
-
-        .item-details {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            font-size: 12.928px;
-            color: #414141;
-        }
-
-        .item-details p:first-child {
-            margin-bottom: 5px;
-        }
-
-        .item-details p:last-child {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .quantity {
-            font-weight: bold;
-            color: #666;
-        }
-
-        .transaction-info {
-            padding: 20px;
-            font-size: 12.928px;
-        }
-
-        .transaction-info p {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .submit-button {
-            background-color: #4169e1;
-            color: #fff;
-            padding: 15px; /* Bigger button */
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            width: 415px; /* Full width */
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .arrow-down {
-            font-size: 24px;
-            margin-top: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-align: center;
+            width: 90%;
+            margin: 0 auto;
         }
-
-        .popup {
-            display: none;
-            font-size: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            color: #fff;
-            z-index: 1000;
-        }
-
-        .bottom-nav {
+        .deposit-icon {
+            width: 50px;
+            height: 50px;
             display: flex;
-            justify-content: space-around;
-            background-color: #fff;
-            border-top: 1px solid #eee;
-            padding: 10px 0;
-            position: sticky;
-            bottom: 0;
-        }
-
-        .nav-item {
-            display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
         }
-
-        .nav-item img {
-            width: 30px;
-            height: 30px;
-
+        .deposit-icon img {
+            width: 50px;
+            height: 45px;
         }
-
-        .totals {
-            color: orange;
-            font-size: 20px;
+        .deposit-message {
+            font-size: 15px;
+            margin-bottom: 25px;
+            color: #333;
         }
+        .address-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0px;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+        .copy-button {
+            background-color: #fff;
+            border: 1px solid #3769b9;
+            color: #3769b9;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            padding: 0 10px;
+            height: 40px;
+            width: auto;
+            min-width: 65px;
+            box-sizing: border-box;
+        }
+        .address {
+    background-color: #f5f5f5;
+    padding: 8px 9px;
+    border-radius: 5px;
+    font-size: 13px;
+    color: #666;
+    white-space: normal; /* Allows text to wrap */
+    flex-grow: 1; /* Ensures it takes all available space */
+    text-align: center;
+    height: auto; /* Allows height to adjust */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    word-break: break-word; /* Ensures long addresses wrap */
+    min-width: 0; /* Prevents unnecessary stretching */
+}
 
-        .nav-item p {
+        .contact-button {
+            background-color: #fff;
+            border: 1px solid #3769b9;
+            color: #3769b9;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            white-space: nowrap;
+            padding: 0 2vw;
+            height: 40px;
+            width: 100%; /* Ensures full width on smaller screens */
+            max-width: 300px; /* Prevents it from getting too large on wider screens */
+            margin: 10px auto 25px;
+            box-sizing: border-box;
+        }
+        .hint {
             font-size: 12px;
-            margin-top: 5px;
-        }
-
-        .nav-item.selected {
-            color: #3498db;
+            color: #777;
+            margin-top: 10px;
+            text-align: left;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header-card">
-            <div class="header-content">
-                <div class="back-icon" onclick="window.location.href='your-previous-page.html'">
-                    <img src="arrowicon.png" alt="Back Icon">
-                </div>
-                <h1>Record</h1>
-            </div>
-            <div class="tabs">
-                <div class="tab selected">Incomplete</div>
-                <div class="tab">Complete</div>
-            </div>
+    <div class="title-card">
+        <div class="back-icon" onclick="window.location.href='aliexpress.html'">
+            <img src="arrowicon.png" alt="Back Icon">
         </div>
-        <div class="content-card">
-            <p>Order Nos: 1060159140338343936</p>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/9330655c-0163-4639-b125-fc17500b36e5.jpg" alt="">
-                <div class="item-details">
-                    <p>REALME NARZO SOFTCASE CANDY SILIKON CASE BERBAHAN SOFT LENTUR - Hitam</p>
-                    <p>11.22 USDT <span class="quantity">x30</span></p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/9f35c611-ec28-4bb1-9c50-b5860505e7ba.jpg" alt="">
-                <div class="item-details">
-                    <p>Busa Helm cakil</p>
-                    <p>9.93 USDT <span class="quantity">x54</span></p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/b4e4caa5-f7ee-423a-8890-4ff58da053bc.jpg" alt="">
-                <div class="item-details">
-                    <p>PROMO !! Helm Honda TRX-3 (kirim via GOJEK saja) helm murah</p>
-                    <p>13.9 USDT <span class="quantity">x47</span></p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/cd7d7d09-e7ce-4e05-bae2-47c6a70f911d.jpg" alt="">
-                <div class="item-details">
-                    <p>Handuk Mandi dewasa / handuk hotel tebal</p>
-                    <p>8.44 USDT <span class="quantity">x37</span></p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/e81a849c-a986-4529-a4da-eb0a1ce646d3.jpg" alt="">
-                <div class="item-details">
-                    <p>Paket Tempered Glass Oppo Realme 6 Screen Protection Anti Gores Kaca</p>
-                    <p>4.96 USDT <span class="quantity">x29</span></p>
-                </div>
-            </div>
-            <div class="item-card">
-                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/b54506dd-be16-4b4d-9eb0-afb7790e58fd.jpg" alt="">
-                <div class="item-details">
-                    <p>Kipas Angin Jepit 3 In 1- 18 WATT Multi Fungsi JEPIT MEJA DAN DINDING</p>
-                    <p>10.43 USDT <span class="quantity">x21</span></p>
-                </div>
-            </div>
-            <div class="transaction-info">
-                <p>Transaction time: <span>2025-03-30 20:33:56</span></p>
-                <p>Order amount: <span>5791.49 USDT</span></p>
-                <p>Commissions: <span>2124.38 USDT</span></p>
-                <p>Expected income: <span class="totals">7915.87 USDT</span></p>
-                <button class="submit-button" onclick="showPopup()">Submit order</button>
-                <div class="arrow-down">↓</div>
-            </div>
+        <h1>Deposit</h1>
+    </div>
+    <div class="content-card">
+        <div class="deposit-icon">
+            <img src="downbtn.png" alt="Down Button">
         </div>
-        <div class="popup" id="popup">
-            <p>Your account balance is insufficient, you need recharge 2017.42 to submit this order.</p>
+        <div class="deposit-message">You have an order that has not been paid</div>
+        <div class="address-container">
+            <div class="address">TXoRGpbKg1WXAwRj1N7j9PSvCHBAe9f5a8</div>
+            <button class="copy-button" onclick="copyAddress()">Copy</button>
         </div>
-        <div class="bottom-nav">
-            <div class="nav-item">
-                <img src="homeicon.png" alt="Home">
-                <p>Home</p>
-            </div>
-            <div class="nav-item">
-                <img src="serveicon.png" alt="Service">
-                <p>Service</p>
-            </div>
-            <div class="nav-item">
-                <img src="menuicon.png" alt="Menu">
-                <p>Menu</p>
-            </div>
-            <div class="nav-item selected">
-                <img src="bluercd.png" alt="Record">
-                <p>Record</p>
-            </div>
-            <div class="nav-item">
-                <img src="mineicon.png" alt="Mine">
-                <p>Mine</p>
-            </div>
+        <button class="contact-button">Submit Order</button>
+        <div class="hint">
+            Click to copy the address to transfer USDT. If it does not arrive automatically, click to contact customer service for processing.
         </div>
     </div>
     <script>
-        function showPopup() {
-            document.getElementById('popup').style.display = 'block';
-            setTimeout(function() {
-                document.getElementById('popup').style.display = 'none';
-            }, 3000); // Hide after 3 seconds
+        function copyAddress() {
+            const address = document.querySelector('.address').textContent;
+            navigator.clipboard.writeText(address).then(() => {
+                alert('Address copied to clipboard!');
+            });
         }
     </script>
 </body>
