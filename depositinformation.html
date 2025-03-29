@@ -23,7 +23,7 @@
             border-radius: 5px;
             box-shadow: 0 2px 5px rgba(99, 99, 99, 0.1);
             width: 100%;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -53,7 +53,7 @@
             box-shadow: 0 2px 5px rgba(50, 50, 50, 0.1);
             text-align: center;
             width: calc(100% - 40px);
-            margin: 8px 0;
+            margin: 5px 0;
         }
         .info-card:first-of-type {
             margin-top: 0;
@@ -81,7 +81,7 @@
         }
         .order-nos span,
         .copy-button {
-            color: #862e05;
+            color: #a03e10;
         }
         .instruction {
             font-size: 12px; /* Reduced */
@@ -112,14 +112,14 @@
         }
         .copy-button {
             background-color: #fff;
-            border: 1px solid #ffa500; /* Matched text color */
+            border: 1px solid #a03e10; /* Matched text color */
             border-radius: 4px;
             cursor: pointer;
             font-size: 13px; /* Reduced */
-            padding: 7px 14px; /* Smaller */
+            padding: 2px; /* Smaller */
             margin-bottom: 18px;
-            height: 13px;
-            width: 19px;
+            height: 15px;
+            width: 25px;
         }
         .action-buttons {
             display: flex;
@@ -161,11 +161,11 @@
             to pay (TRC20)
         </div>
         <img src="qrcode1.jpg" alt="QR Code" class="qr-code">
-        <div class="address">TDrgE64Lo5Cut8cCvDxZZxfmhHJpJBQb9o</div>
+        <div class="address">TXoRGpbKg1WXAwRj1N7j9PSvCHBAe9f5a8</div>
         <button class="copy-button" onclick="copyAddress()">Copy</button>
     </div>
     <div class="action-buttons">
-        <span id="cancel-deposit" onclick="cancelDeposit()">Cancel deposit
+        <span id="cancel-deposit" onclick="cancelDeposit()">Cancel deposit<br>
 application</span>
         <span onclick="transferred()">transferred</span>
     </div>
