@@ -47,14 +47,15 @@
         }
 
         .back-icon img {
-            width: 11px;
-            height: 17px;
-            filter: grayscale(100%);
+            width: 27px; /* Reduced by 10% */
+            height: 27px; /* Reduced by 10% */
+            filter: grayscale(100%); /* Makes it thinner/grey */
         }
 
         .header-content h1 {
-            font-size: 15px;
-            color: #101010;
+            font-size: 20px;
+            font-weight: bold; /* Make Record bold */
+            color: #333;
             margin: 0 auto;
         }
 
@@ -82,7 +83,6 @@
             background-color: #fff;
             padding: 10px 20px;
             margin-top: 10px;
-            font-size: 12.928px;
         }
 
         .order-details p {
@@ -91,25 +91,23 @@
 
         .item-card {
             display: flex;
-            background-color: #f0f0f0;
-            margin: 10px 0;
+            background-color: #f0f0f0; /* Light grey background */
+            margin: 10px 0; /* Margins around the card */
             padding: 10px;
             border-radius: 5px;
-            font-size: 12.928px;
         }
 
         .item-card img {
-            width: 70px;
+            width: 80px;
             height: auto;
             margin-right: 10px;
-            align-self: flex-start;
+            align-self: flex-start; /* Image at the top */
         }
 
         .item-details {
             flex: 1;
             display: flex;
             flex-direction: column;
-            font-size: 12.928px;
         }
 
         .item-details p:first-child {
@@ -122,13 +120,12 @@
         }
 
         .quantity {
-            font-size: 12.928px;
+            font-weight: bold;
             color: #666;
         }
 
         .transaction-info {
             padding: 20px;
-            font-size: 12.928px;
         }
 
         .transaction-info p {
@@ -137,19 +134,19 @@
         }
 
         .submit-button {
-            background-color: #202ef5;
+            background-color: #3498db;
             color: #fff;
-            padding: 15px;
+            padding: 15px; /* Bigger button */
             border: none;
             border-radius: 5px;
             margin-top: 20px;
-            width: calc(100% - 30px);
+            width: calc(100% - 30px); /* Full width */
             cursor: pointer;
-            font-size: 12px;
+            font-size: 16px;
         }
 
         .arrow-down {
-            font-size: 12px;
+            font-size: 24px;
             margin-top: 10px;
             text-align: center;
         }
@@ -184,14 +181,15 @@
             align-items: center;
         }
 
-        .totals {
-            color: orange;
-            font-size: 20px;
+        .nav-item img {
+            width: 30px;
+            height: 30px;
+
         }
 
-        .nav-item img {
-            width: 20px;
-            height: 20px;
+        .total1 {
+            color: orange;
+            font-size: 25px;
         }
 
         .nav-item p {
@@ -214,38 +212,47 @@
                 <h1>Record</h1>
             </div>
             <div class="tabs">
-                <div class="tab">Incomplete</div>
-                <div class="tab selected">Complete</div>
+                <div class="tab selected">Incomplete</div>
+                <div class="tab">Complete</div>
             </div>
         </div>
         <div class="content-card">
-            <p>Order Nos: 1060159094070976512</p>
+            <p>Order Nos: 1060159140338343936</p>
             <div class="item-card">
                 <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/0c0a6367-4784-4be0-95bc-513bc5e018d8.jpg" alt="">
                 <div class="item-details">
-                    <p>KIMONO PRIA piyama COUPLE/lebih sweet/bahannya adem dan ukuran...</p>
-                    <p>10.92 USDT <span class="quantity">x72</span></p>
+                    <p>Iphone X (TEN) 64gb second ex inter fullset mulus - Grey</p>
+                    <p>1.39 USDT <span class="quantity">x51</span></p>
                 </div>
             </div>
-            <div class="transaction-info">
-                <p>Transaction time: <span>2025-01-04 08:33:45</span></p>
-                <p>Order amount: <span>786.24 USDT</span></p>
-                <p>Commissions: <span>94.35 USDT</span></p>
-                <p>Expected income: <span class="totals">880.59 USDT</span></p>
-            </div>
-            <p>Order Nos: 1060159054552244224</p>
             <div class="item-card">
                 <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/d02f6179-c829-4abc-bfc8-e82bf299bca1.jpg" alt="">
                 <div class="item-details">
                     <p>piyama katun tangan pendek - Putih, M</p>
-                    <p>17.87 USDT <span class="quantity">x41</span></p>
+                    <p>17.87 USDT <span class="quantity">x47</span></p>
+                </div>
+            </div>
+            <div class="item-card">
+                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/c4d09a1b-c12b-4297-aa4c-33a084fd7420.jpg" alt="">
+                <div class="item-details">
+                    <p>piyama laki-laki katun stretch - Biru Muda, XL</p>
+                    <p>32.77 USDT <span class="quantity">x38</span></p>
+                </div>
+            </div>
+            <div class="item-card">
+                <img data-v-3600700f="" src="https://dy-photo.com/profile/2022/08/03/77da6e70-234f-4143-ae7a-7d79e318cd94.jpg" alt="">
+                <div class="item-details">
+                    <p>VIVO Y19 RAM 6/128 GARANSI RESMI VIVO INDONESIA - Blue No Bonus</p>
+                    <p>0.57 USDT <span class="quantity">x1</span></p>
                 </div>
             </div>
             <div class="transaction-info">
-                <p>Transaction time: <span>2025-01-04 08:33:35</span></p>
-                <p>Order amount: <span>732.67 USDT</span></p>
-                <p>Commissions: <span>87.92 USDT</span></p>
-                <p>Expected income: <span class="totals">820.59 USDT</span></p>
+                <p>Transaction time: <span>2025-01-04 08:33:56</span></p>
+                <p>Order amount: <span>2156.61 USDT</span></p>
+                <p>Commissions: <span>1617.46 USDT</span></p>
+                <p>Expected income: <span class="total1">3774.07 USDT</span></p>
+                <button class="submit-button" onclick="showPopup()">Submit order</button>
+                <div class="arrow-down">↓</div>
             </div>
         </div>
         <div class="popup" id="popup">
