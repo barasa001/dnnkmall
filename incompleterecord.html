@@ -169,8 +169,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 200px; /* Set fixed width */
-    height: 60px; /* Set fixed height */
+    width: 280px; /* Slightly wider */
+    min-height: 100px; /* Allow flexible height */
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -179,6 +179,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap; /* Allow text wrapping */
+    word-wrap: break-word; /* Ensure words break correctly */
+    overflow: hidden; /* Prevent overflow issues */
 }
 
         .bottom-nav {
